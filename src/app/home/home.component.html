@@ -1,0 +1,58 @@
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Complaint forum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-lg-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink='LogOut'>LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="jumbtron">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Complaint Heading</th>
+            <th scope="col">Created at time</th>
+            <th scope="col">current status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let comp of compData'>
+                <td>{{comp.email}}</td>
+                <td>{{comp.heading}}</td>
+                <td>{{comp.time}}</td>
+                <td>{{comp.status}}</td>
+                <td><button class="btn" (click)='editComp(comp,i)' data-toggle="modal" data-target="#modalcomp">Update</button></td>
+              </tr>
+          
+        </tbody>
+      </table>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modalcomp">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Complaint</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
